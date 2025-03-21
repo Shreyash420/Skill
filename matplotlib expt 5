@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(8, 6))
+for species in balanced_data['species_encoded'].unique():
+    subset = balanced_data[balanced_data['species_encoded'] == species]
+    plt.scatter(subset['sepal_length'], subset['sepal_width'], label=f"Species {species}")
+
+plt.title('Sepal Length vs Sepal Width')
+plt.xlabel('Sepal Length (Normalized)')
+plt.ylabel('Sepal Width (Normalized)')
+plt.legend()
+plt.show()
